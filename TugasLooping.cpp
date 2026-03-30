@@ -42,3 +42,7 @@ void tampilkanMenu() {
     cout << "Pilih menu (0-2): ";
     cin >> pilihan;
 }
+
+void tampilkanHasilPrima() {
+    inputAngka();
+    if (cekPrima(angka)) {
