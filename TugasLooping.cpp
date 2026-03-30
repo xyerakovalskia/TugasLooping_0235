@@ -50,3 +50,7 @@ void tampilkanHasilPrima() {
     } else {
         cout << "Hasil: " << angka << " BUKAN bilangan prima." << endl;
     }
+}
+
+void tampilkanHasilFibonacci() {
+    inputAngka();
