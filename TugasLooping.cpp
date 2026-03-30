@@ -34,3 +34,7 @@ void inputAngka() {
 
 void tampilkanMenu() {
     cout << "\n===============================" << endl;
+    cout << "   PROGRAM PENGECEK BILANGAN   " << endl;
+    cout << "===============================" << endl;
+    cout << "1. Cek Bilangan Prima" << endl;
+    cout << "2. Cek Bilangan Fibonacci" << endl;
