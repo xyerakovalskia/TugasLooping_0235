@@ -66,3 +66,7 @@ int main() {
 
     while (berjalan) {
         tampilkanMenu();
+
+        switch (pilihan) {
+            case 1:
+                tampilkanHasilPrima();
