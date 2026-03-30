@@ -14,3 +14,7 @@ bool cekPrima(int n) {
     }
     return true;
 }
+
+bool cekFibonacci(int n) {
+    if (n < 0) return false;
+    int a = 0;
