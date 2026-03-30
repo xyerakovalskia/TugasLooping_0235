@@ -70,3 +70,7 @@ int main() {
         switch (pilihan) {
             case 1:
                 tampilkanHasilPrima();
+                break;
+            case 2:
+                tampilkanHasilFibonacci();
+                break;
