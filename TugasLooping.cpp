@@ -1,0 +1,95 @@
+#include <iostream>
+
+using namespace std;
+
+// Variabel Global
+int angka;
+int pilihan;
+
+// Function untuk mengecek apakah bilangan n adalah bilangan prima
+bool cekPrima(int n) {
+    if (n <= 1) return false;
+    int i = 2;
+    while (i * i <= n) {
+        if (n % i == 0) return false;
+        i++;
+    }
+    return true;
+}
+
+// Function untuk mengecek apakah bilangan n adalah bagian dari deret Fibonacci
+bool cekFibonacci(int n) {
+    if (n < 0) return false;
+    int a = 0;
+    int b = 1;
+    while (a < n) {
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return (a == n);
+}
+
+// Prosedural untuk menerima inputan angka dari pengguna
+void inputAngka() {
+    cout << "Masukkan angka yang ingin dicek: ";
+    cin >> angka;
+}
+
+// Prosedural untuk menampilkan menu pilihan
+void tampilkanMenu() {
+    cout << "\n===============================" << endl;
+    cout << "   PROGRAM PENGECEK BILANGAN   " << endl;
+    cout << "===============================" << endl;
+    cout << "1. Cek Bilangan Prima" << endl;
+    cout << "2. Cek Bilangan Fibonacci" << endl;
+    cout << "0. Keluar" << endl;
+    cout << "Pilih menu (0-2): ";
+    cin >> pilihan;
+}
+
+// Prosedural untuk menampilkan hasil pengecekan prima
+void tampilkanHasilPrima() {
+    inputAngka();
+    if (cekPrima(angka)) {
+        cout << "Hasil: " << angka << " adalah bilangan PRIMA." << endl;
+    } else {
+        cout << "Hasil: " << angka << " BUKAN bilangan prima." << endl;
+    }
+}
+
+// Prosedural untuk menampilkan hasil pengecekan Fibonacci
+void tampilkanHasilFibonacci() {
+    inputAngka();
+    if (cekFibonacci(angka)) {
+        cout << "Hasil: " << angka << " adalah bagian dari deret FIBONACCI." << endl;
+    } else {
+        cout << "Hasil: " << angka << " BUKAN bagian dari deret Fibonacci." << endl;
+    }
+}
+
+int main() {
+    bool berjalan = true;
+
+    while (berjalan) {
+        tampilkanMenu();
+
+        switch (pilihan) {
+            case 1:
+                tampilkanHasilPrima();
+                break;
+            case 2:
+                tampilkanHasilFibonacci();
+                break;
+            case 0:
+                cout << "Terima kasih! Program selesai." << endl;
+                berjalan = false;
+                break;
+            default:
+                cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
